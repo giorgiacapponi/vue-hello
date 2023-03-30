@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <label for="colors">seleziona il colore</label>
+        <select name="" id="colors" v-model="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <input type="text" v-model="message">
+        <h2 :class="color">{{message}}</h2>
+        <label for="img">seleziona un img</label>
+        <select name="" id="img" v-model="choice" @click="showImg()">
+            <option value="natura">natura</option>
+            <option value="sport">sport</option>
+            <option value="pizza">pizza</option>
+        </select>
+         <img v-if="choice !== '' "  :src="imgShowed" alt="" >
+        
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
